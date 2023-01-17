@@ -9,8 +9,8 @@ export const ContentStyles = styled.div`
 
   .pages {
     display: flex;
-    width: 300%;
-    box-sizing: border-box;	
+    /* width: 300%; */
+    box-sizing: border-box;
   }
 
   .page {
@@ -24,4 +24,4 @@ export const ContentStyles = styled.div`
     transition: all 0.7s;
     color: black;
   }
-`
+`;
