@@ -1,35 +1,23 @@
 import styled from "styled-components";
+import { Section } from "../../interfaces/section";
 
-export const Container = styled.div`
+export const Container = styled.div<{ sectionSelected: Section }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   bottom: 0;
   position: fixed;
   width: 100%;
   height: 5rem;
 
+  background: ${(props) =>
+    props.sectionSelected.selected
+      ? `var(--background-${props.sectionSelected.label.toLowerCase()})`
+      : `transparent`};
 
   .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
-
-  button {
-    width: 100%;
-    padding: 0 1.5rem;
-    height: 4rem;
-    background: var(--background);
-    color: var(--text);
-    border-radius: 0.25rem;
-    border: 0;
-    font-size: 1.2rem;
-
-    transition: filter 0.5s;
-  }
-
-  .selected {
-    color: var(--middle-blue);
-  }
-`
+`;

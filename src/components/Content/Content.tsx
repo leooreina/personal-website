@@ -1,17 +1,17 @@
-import { useSelector } from "react-redux";
 import { Section } from "../../interfaces/section";
 import { ContentStyles } from "./styles";
 
-export function Content() {
-  const menu = useSelector((state: any) => state.menu.value)
-  const contentSelected = menu.find((section: Section) => section.selected);
+interface ContentProps {
+  sectionSelected: Section;
+}
 
+export function Content({ sectionSelected }: ContentProps) {
   return (
-    <ContentStyles>
+    <ContentStyles sectionSelected={sectionSelected}>
       <div className="container">
         <div className="pages">
           <div className="page">
-            <h1>{contentSelected.label}</h1>
+            <h1>{sectionSelected.label}</h1>
           </div>
         </div>
       </div>

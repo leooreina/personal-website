@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "label": "About",
+    "selected": false
+  },
+  {
+    "id": 2,
+    "label": "Home",
+    "selected": true
+  },
+  {
+    "id": 3,
+    "label": "Work",
+    "selected": false
+  }
+]

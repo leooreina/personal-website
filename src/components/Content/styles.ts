@@ -1,15 +1,19 @@
 import styled from "styled-components";
+import { Section } from "../../interfaces/section";
 
-export const ContentStyles = styled.div`
+export const ContentStyles = styled.div<{ sectionSelected: Section }>`
   .container {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background: ${(props) =>
+      props.sectionSelected.selected
+        ? `var(--background-${props.sectionSelected.label.toLowerCase()})`
+        : `transparent`};
   }
 
   .pages {
     display: flex;
-    /* width: 300%; */
     box-sizing: border-box;
   }
 

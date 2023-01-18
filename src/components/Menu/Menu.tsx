@@ -1,15 +1,21 @@
-import { useSelector } from "react-redux";
+import { Section } from "../../interfaces/section";
 import { MenuButton } from "../MenuButton/MenuButton";
 import { Container } from "./styles"
 
-export function Menu() {
-  const menu = useSelector((state: any) => state.menu.value)
+interface MenuProps {
+  menu: any;
+  sectionSelected: Section; 
+}
 
+export function Menu({ menu, sectionSelected }: MenuProps) {
   return (
-    <Container>
+    <Container sectionSelected={sectionSelected}>
       <div className="menu-grid">
-        {menu.map((section: any) => (
-          <MenuButton section={section} />
+        {menu.map((section: Section) => (
+          <MenuButton
+            menu={menu}
+            section={section} 
+          />
         ))}
       </div>
     </Container>
