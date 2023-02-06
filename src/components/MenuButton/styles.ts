@@ -4,10 +4,9 @@ import { Section } from "../../interfaces/section";
 export const Container = styled.div<{ sectionSelected: Section }>`
   button {
     width: 100%;
-    padding: 0 1.5rem;
+    padding-top: 5px;
     height: 4rem;
     color: var(--text);
-    border-radius: 0.25rem;
     border: 0;
     font-size: 1.2rem;
     background: ${(props) =>
@@ -20,5 +19,10 @@ export const Container = styled.div<{ sectionSelected: Section }>`
 
   .selected {
     color: var(--ease-green);
+    border: 5px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-top: 10px;
   }
 `;

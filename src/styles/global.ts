@@ -44,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
+    font-family: 'Cairo', sans-serif;
     font-weight: 700;
     cursor: pointer;
   }

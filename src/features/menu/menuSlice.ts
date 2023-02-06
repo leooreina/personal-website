@@ -7,19 +7,20 @@ export const menu = createSlice({
     value: menuData,
   },
   reducers: {
-    changeMenu: (state, action) => {
-      state.value[action.payload.currentSelected].selected = true;
-      if (
-        state.value[action.payload.currentSelected] !==
-        state.value[action.payload.previousSelected]
-      ) {
-        state.value[action.payload.previousSelected].selected = false;
+    changeSectionSelected: (state, action) => {
+      const { currentSectionIndex, previousSectionIndex } = action.payload;
+      const { value } = state;
+
+      value[currentSectionIndex].selected = true;
+
+      if (value[currentSectionIndex] !== value[previousSectionIndex]) {
+        value[previousSectionIndex].selected = false;
       }
     },
   },
 });
 
-export const { changeMenu } = menu.actions;
+export const { changeSectionSelected } = menu.actions;
 
 export const selectMenu = (state: any) => state.menu.value;
 

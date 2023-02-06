@@ -1,31 +1,44 @@
 import styled from "styled-components";
-import { Section } from "../../interfaces/section";
 
-export const ContentStyles = styled.div<{ sectionSelected: Section }>`
+export const ContentStyles = styled.div`
   .container {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: ${(props) =>
-      props.sectionSelected.selected
-        ? `var(--background-${props.sectionSelected.label.toLowerCase()})`
-        : `transparent`};
-  }
-
-  .pages {
-    display: flex;
-    box-sizing: border-box;
-  }
-
-  .page {
-    width: 100%;
-    height: 100vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    transition: all 0.7s;
-    color: black;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ease-green);
+
+    width: 100%;
+    height: 100vh;
+  }
+
+  #page-1 {
+    background: var(--background-about);
+    position: absolute;
+    left: -100%;
+    transition: transform 2s ease-in-out;
+  }
+
+  #page-2 {
+    background: var(--background-home);
+    position: absolute;
+    left: 0;
+    transition: transform 2s ease-in-out;
+  }
+
+  #page-3 {
+    background: var(--background-work);
+    position: absolute;
+    left: 100%;
+    transition: transform 2s ease-in-out;
   }
 `;

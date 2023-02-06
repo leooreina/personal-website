@@ -11,7 +11,8 @@ export function App() {
 
   return (
     <>
-      <Content 
+      <Content
+        menu={menu}
         sectionSelected={sectionSelected}
       />
       <Menu 
